@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get CPU temperature
+TEMP=$(sensors | grep 'Core 0' | awk '{print $3}')
+
+# Get CPU usage
+CPU=$(top -bn1 | grep 'Cpu(s)' | awk '{print $2 + $4}')
+
+# Get Memory usage
+MEM=$(free -m | awk '/Mem:/ {printf("%.0f%", $3/$2 * 100)}' )
+
+# Print the formatted output
+echo "󰍛 $CPU%  $MEM"

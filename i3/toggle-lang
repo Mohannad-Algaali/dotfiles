@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CURRENT=$(xkb-switch -p)  # prints current layout
+
+if [ "$CURRENT" = "us" ]; then
+    xkb-switch -s ara
+else
+    xkb-switch -s us
+fi

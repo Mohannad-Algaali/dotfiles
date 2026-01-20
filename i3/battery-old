@@ -1,0 +1,11 @@
+
+#!/bin/bash
+
+# Get battery percentage
+PERCENTAGE=$(acpi | awk '{print $4}')
+
+# Get battery status
+STATUS=$(acpi | awk '{print $3}')
+
+# Print the formatted output
+echo "$PERCENTAGE  $STATUS"

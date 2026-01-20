@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get the current layout from xkb-switch
+CURRENT=$(xkb-switch -p)
+
+case "$CURRENT" in
+  us) echo "EN" ;;
+  ara) echo "AR" ;;
+  *) echo "??" ;;
+esac

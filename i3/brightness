@@ -1,0 +1,18 @@
+
+#!/usr/bin/env bash
+
+CUR=$(brightnessctl get)
+MAX=$(brightnessctl max)
+
+PCT=$(( CUR * 100 / MAX ))
+
+echo " ${PCT}%"
+echo " ${PCT}%"
+
+if [ "$PCT" -lt 30 ]; then
+    echo "#ff5555"
+elif [ "$PCT" -lt 70 ]; then
+    echo "#f1fa8c"
+else
+    echo "#50fa7b"
+fi

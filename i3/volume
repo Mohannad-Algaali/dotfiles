@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Get volume and mute status
+VOL=$(pamixer --get-volume)
+MUTE=$(pamixer --get-mute)
+
+if [ "$MUTE" = "true" ]; then
+    echo " "
+    echo " "
+    echo "#ff5555"
+else
+    echo " ${VOL}%"
+    echo " ${VOL}%"
+
+    if [ "$VOL" -lt 30 ]; then
+        echo "#f1fa8c"
+    elif [ "$VOL" -lt 70 ]; then
+        echo "#8be9fd"
+    else
+        echo "#50fa7b"
+    fi
+fi

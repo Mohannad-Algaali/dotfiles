@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+PROFILE=$(tuned-adm active 2>/dev/null | awk '{print $4}')
+
+case "$PROFILE" in
+  throughput-performance)
+    ICON=" 󰓅 "   # performance
+    COLOR="#a7c080"
+    ;;
+  balanced)
+    ICON=" 󰈐 "   # balanced
+    COLOR="#d3c6aa"
+    ;;
+  balanced-battery)
+    ICON=" 󰂃 "   # battery saver
+    COLOR="#7fbbb3"
+    ;;
+  powersave)
+    ICON=" 󰂃 "
+    COLOR="#e67e80"
+    ;;
+  *)
+    ICON=" 󰞋 "
+    COLOR="#928374"
+    ;;
+esac
+
+# Full text
+echo "$ICON"
+
+# Short text
+echo "$ICON"
+
+# Color
+echo "$COLOR"

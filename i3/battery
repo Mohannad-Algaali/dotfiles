@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Get battery percentage as a number (strip the % sign)
+PERCENTAGE=$(acpi | awk -F', ' '{print $2}' | tr -d '%')
+
+# Get battery status (Charging / Discharging / Full)
+STATUS=$(acpi | awk -F', ' '{print $1}' | awk '{print $3}')
+
+# Determine icon
+if [ "$STATUS" = "Charging" ]; then
+    ICON=""
+    # COLOR="\033[1;33m"  # Bright yellow for charging
+else
+    if [ "$PERCENTAGE" -ge 90 ]; then
+        ICON=""
+        COLOR="\033[1;32m"  # Green
+    elif [ "$PERCENTAGE" -ge 70 ]; then
+        ICON=""
+        COLOR="\033[32m"  # Green
+    elif [ "$PERCENTAGE" -ge 50 ]; then
+        ICON=""
+        COLOR="\033[33m"  # Yellow
+    elif [ "$PERCENTAGE" -ge 30 ]; then
+        ICON=""
+        COLOR="\033[1;31m"  # Bright Red
+    else
+        ICON=""
+        COLOR="\033[31m"  # Red
+    fi
+fi
+
+# Reset color
+# RESET="\033[0m"
+
+# Print the formatted output with color
+echo -e "${ICON} ${PERCENTAGE}%"

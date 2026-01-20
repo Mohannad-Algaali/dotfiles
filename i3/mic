@@ -1,0 +1,15 @@
+
+#!/usr/bin/env bash
+
+# Get mic mute status (default source)
+MUTE=$(pamixer --default-source --get-mute)
+
+if [ "$MUTE" = "true" ]; then
+    echo " "
+    echo " "
+    echo "#ff5555"
+else
+    echo "  "
+    echo "  "
+    echo "#50fa7b"
+fi
