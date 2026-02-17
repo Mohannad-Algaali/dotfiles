@@ -9,7 +9,7 @@ function fish_prompt
     set -l normal (set_color normal)
 
     # Background palette (Matches the image)
-    set -l bg_blue 00afff   # The bright blue path color
+    set -l bg_blue b4befe   # The bright blue path color
     # set -l bg_dark_green 29a600 # The golden git/branch color
     # set -l bg_teal 0074cc   # The teal root/user color
     # set -l bg_green 00cc3d   # The lime green success color

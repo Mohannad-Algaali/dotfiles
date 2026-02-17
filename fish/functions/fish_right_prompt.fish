@@ -2,9 +2,9 @@ function fish_right_prompt
     command git rev-parse --is-inside-work-tree >/dev/null 2>&1; or return
 
     # Colors
-    set -l fg (set_color d3c6aa)
-    set -l bg_git (set_color -b 3a515d)
-    set -l sep (set_color 3a515d)
+    set -l fg (set_color cdd6f4)       # Text (Mocha Text)
+    set -l bg_git (set_color -b 313244) # Background (Mocha Surface0)
+    set -l sep (set_color 313244)      # Separator (Mocha Surface0)
     set -l normal (set_color normal)
 
     set -l branch (command git symbolic-ref --short HEAD 2>/dev/null \

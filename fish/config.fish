@@ -23,6 +23,7 @@ alias fish_config 'nvim ~/.config/fish'
 alias dunst_config 'nvim ~/.config/dunst'
 alias picom_config 'nvim ~/.config/picom'
 alias polybar_config 'nvim ~/.config/polybar'
+alias rofi_config 'nvim ~/.config/rofi'
 
 
 alias salasel 'cd ~/Programming/tera-visions/Salaasil/salasel/'
@@ -46,3 +47,6 @@ set -gx PATH $PATH \
     /bin \
     $HOME/develop/flutter/bin\
     $HOME/.bun/bin
+
+# OpenClaw Completion
+source "/home/mohannad/.openclaw/completions/openclaw.fish"

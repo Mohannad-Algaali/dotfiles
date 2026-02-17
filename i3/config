@@ -29,6 +29,9 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Use absolute paths and ensure the process runs in the background
+# exec --no-startup-id /usr/bin/xss-lock -- /usr/bin/lock -c 282828 &
+# exec --no-startup-id /usr/bin/xautolock -time 15 -locker "/usr/bin/lock -c 282828" &
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -68,7 +71,7 @@ bindsym $mod+w exec rofi -show window
 exec --no-startup-id setxkbmap -layout us,ara 
 bindsym $mod+space exec ~/.config/i3/toggle-lang
 
-
+bindsym $mod+o exec --no-startup-id ~/.local/bin/lock 
 
 # clipboard history
 exec --no-startup-id greenclip daemon
@@ -222,7 +225,7 @@ bindsym $mod+n exec nautilus
 # bindsym $mod+t exec blackbox
 bindsym $mod+y exec kitty -e yazi
 
-bindsym $mod+Delete exec ~/.config/i3/power_menu.sh
+bindsym $mod+Escape exec ~/.config/i3/power_menu.sh
 # Rofi power profile menu
 bindsym $mod+b exec --no-startup-id ~/.local/bin/rofi-power-profile
 
@@ -241,6 +244,7 @@ exec --no-startup-id setxkbmap -option caps:escape
 # use feh background
 exec --no-startup-id ~/.fehbg
 
+
 # dunst notifications
 exec --no-startup-id dunst
 
@@ -254,15 +258,15 @@ gaps outer 5
 
 
 # Compositor (for transparency)
-# exec --no-startup-id picom
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Something for gtk theming
 exec --no-startup-id xfsettingsd
 
 
 for_window [class="blackbox"] border pixel 4
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 5
+default_floating_border pixel 5
 # smart_borders on
 
 # class                 border  backgr. text    indicator child_border
