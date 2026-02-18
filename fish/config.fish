@@ -29,6 +29,8 @@ alias rofi_config 'nvim ~/.config/rofi'
 alias salasel 'cd ~/Programming/tera-visions/Salaasil/salasel/'
 alias marwa 'cd ~/Programming/web/aqua-marwa/'
 
+# fastfetch
+
 #bun stuff
 # alias bun="$HOME/.bun/bin/bun"
 # alias waha-tui="$HOME/.bun/bin/waha-tui"
