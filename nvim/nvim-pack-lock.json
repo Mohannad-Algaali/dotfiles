@@ -88,6 +88,10 @@
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
     "preview": {
       "rev": "87db18b8d19c8b0eed399f52e4c527ce5afe4817",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
@@ -107,6 +111,10 @@
     "tinymist": {
       "rev": "fe659806c65ec73a39356dbb83b156c1e4bfd577",
       "src": "https://github.com/Myriad-Dreamin/tinymist"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
     },
     "typst": {
       "rev": "1d5436c0f55490893892441c0eca55e6cdf4916c",

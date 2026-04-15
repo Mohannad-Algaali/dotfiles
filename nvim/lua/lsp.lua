@@ -35,8 +35,13 @@ vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			completion = { callSnippet = "Replace" },
+			runtime = { version = "LuaJIT" }, -- Tell it you're using Neovim's Lua
 			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
+				-- Only index the Neovim API and your config, not every single plugin
+				library = {
+					vim.env.VIMRUNTIME,
+					"${3rd}/luv/library" -- Optional: if you need libuv types
+				},
 				checkThirdParty = false,
 			},
 			diagnostics = {
@@ -44,29 +49,52 @@ vim.lsp.config("lua_ls", {
 			},
 		},
 	},
+	filetypes = { "lua" },
 })
 
 vim.lsp.config("pyright", {
 	root_markers = { "pyproject.toml", "setup.py" },
+	filetypes = { "python" },
 })
 
+vim.lsp.config("html", {
+	filetypes = { "html" },
+	root_markers = { "index.html", "package.json" },
+})
+
+vim.lsp.config("cssls", {
+	filetypes = { "css", "scss", "less" },
+	root_markers = {  "index.html" ,"package.json"  },
+})
+
+vim.lsp.config("emmet_ls", {
+	filetypes = { "html", "css", "scss", "vue", "javascriptreact", "typescriptreact" },
+	root_markers = { "package.json", "index.html" },
+})
+
+vim.lsp.config("tailwindcss", {
+	filetypes = { "html", "css", "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	root_markers = { "tailwind.config.js", "tailwind.config.ts" }, -- only attach in tailwind projects
+})
+
+vim.lsp.config("ltex_plus", {
+	filetypes = { "markdown", "tex", "text" }, -- don't let it attach to code files
+})
 vim.lsp.config("intelephense", {
-	root_markers = { "composer.json" },
+	filetypes = { "php" },
 })
-
 vim.lsp.enable({
 	"ts_ls",
 	"pyright",
 	"clangd",
 	"lua_ls",
 	"intelephense",
-	"ltex_plus",
+	-- "ltex_plus",
 	"tinymist",
 	"cssls",
 	"html",
 	"emmet_ls",
 	"tailwindcss",
-
 })
 
 -- vim.api.nvim_create_autocmd("LspAttach", {

@@ -15,6 +15,7 @@ vim.pack.add({
 	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
 	"https://github.com/folke/which-key.nvim",
     "https://github.com/brenoprata10/nvim-highlight-colors",
+      "https://github.com/folke/todo-comments.nvim",
 
 	-- Typst plugins
 	{ src = "https://github.com/kaarmu/typst.vim", name = "typst.vim" },
@@ -41,6 +42,7 @@ vim.pack.add({
 	{ src = "https://github.com/kndndrj/nvim-dbee", name = "dbee" },
 })
 
+
 require("options")
 require("keymaps")
 require("theme")
@@ -58,6 +60,7 @@ require("plugins.highlight-color")
 require("plugins.blink")
 
 require("typst-preview").setup()
+require("todo-comments").setup()
 
 local notify = vim.notify
 vim.notify = function(msg, ...)
