@@ -1,0 +1,11 @@
+require("telescope").setup({})
+local tb = require('telescope.builtin')
+vim.keymap.set('n', '<leader>sf', tb.find_files, { desc = "[S]earch [F]iles" })
+vim.keymap.set('n', '<leader>sg', tb.live_grep ,{ desc = "[S]earch by [G]rep" })
+vim.keymap.set('n', '<leader><Space>', tb.buffers , { desc = "[S]earch [B]uffers" })
+-- LSP pickers (uncomment the ones you had commented out before)
+vim.keymap.set('n', 'grr', tb.lsp_references)
+vim.keymap.set('n', 'gri', tb.lsp_implementations)
+vim.keymap.set('n', 'grd', tb.lsp_definitions)
+vim.keymap.set('n', 'gO',  tb.lsp_document_symbols)
+

@@ -17,7 +17,7 @@
     idle_threshold = 120
     corner_radius = 3
 
-    font = FiraCode Nerd Font 12
+    font = JetBrainsMono NFM ExtraBold 12
     line_height = 0
     markup = full
     format = "<b>%s</b>\n%b"
@@ -80,3 +80,8 @@ separator_color = "#263640"
     msg_urgency = critical
     background = "#061115"
     foreground = "#D9D7D6"
+
+
+[play_sound]
+    summary = "*"
+    script = "/home/mohannad/.local/bin/alert.sh"
