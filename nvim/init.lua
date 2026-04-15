@@ -12,8 +12,9 @@ vim.pack.add({
 	-- UI plugins
 	{ src = "https://github.com/echasnovski/mini.nvim", name = "mini" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim", name = "ibl" },
-	"https://github.com/folke/which-key.nvim",
 	{ src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+	"https://github.com/folke/which-key.nvim",
+    "https://github.com/brenoprata10/nvim-highlight-colors",
 
 	-- Typst plugins
 	{ src = "https://github.com/kaarmu/typst.vim", name = "typst.vim" },
@@ -52,6 +53,7 @@ require("plugins.indent_line")
 require("plugins.conform")
 require("plugins.rest")
 require("plugins.dbee")
+require("plugins.highlight-color")
 
 require("plugins.blink")
 
